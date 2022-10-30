@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-  * main - Program to evaluate face values.
+  * main - Program for card counting
   *
   * Released under the Vegas Public License.
   * (c)2014 The College Blackjack Team.
@@ -26,7 +26,12 @@ int main(void)
 		val = 11;
 	else
 		val = atoi(card_name);
-
 	printf("The card value is: %i\n", val);
+
+	if ((val >= 3) && (val <= 6))
+		puts("Count has gone up");
+	else if (val == 10)
+		puts("Count has gone down");
+
 	return (0);
 }
